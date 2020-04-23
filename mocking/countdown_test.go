@@ -48,7 +48,6 @@ func TestConfigurableSleeper(t *testing.T) {
 	spyTime := &SpyTime{}
 	sleeper := &ConfigurableSleeper{sleepTime, spyTime.Sleep}
 	sleeper.Sleep()
-
 	if spyTime.DurationSlept != sleepTime {
 		t.Errorf("Should have slept for %v but slept for %v", sleepTime,
 			spyTime.DurationSlept)
